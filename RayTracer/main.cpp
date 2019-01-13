@@ -7,6 +7,7 @@
 #include <iostream>
 #include <random>
 #include <string>
+#include "Render.h"
 #define ANIT_ALIAS
 #define SPACE " "
 #define RAMDOM_ZERO_TO_ONE static_cast <float> (rand()) / static_cast <float> (RAND_MAX)
@@ -28,42 +29,8 @@ Vector3 Random_in_Unit_Sphere()
 	return Point;
 }
 
-Vector3 Make_BackGround_Color(Ray & ray)
-{
-	ray.GetDirection().Normalize();
-	// Shading basic on the height of the image.
-	float t = 0.5f * (ray.GetDirection().Y() + 1.0f);
-	// lerp the color from white to target color based on Y position.
-	return  Vector3(1.0, 1.0, 1.0) * (1.0 - t) + Vector3(0.5, 0.7, 1.0) * t;
-}
-Vector3 Make_Color(Ray & ray,shared_ptr<Scence>scence)
-{
-	Hit_Data hit_data;
-	if (scence->Render(ray, hit_data))
-	{
-		/*Vector3 New_Target = hit_data.Hit_Position + hit_data.Hit_Normal + Random_in_Unit_Sphere();
-		Ray New_Ray(hit_data.Hit_Position, New_Target - hit_data.Hit_Position);
-		return Make_Color(New_Ray,scence) * 0.5;*/
-		return hit_data.Color;
-	    //return Vector3(1, 0.78, 0.34);
 
-	}
-	else
-	{
-		return Make_BackGround_Color(ray);
-	}
-}
-bool Initialize_File(fstream & file, int Width, int Height)
-{
-	file.open("G:/Project/C++/RayTracer/OutPut/Gold.ppm");
-	bool Is_Success = false;
-	if (file.is_open())
-	{
-		file << "P3\n" << Width << SPACE << Height << "\n255\n";
-		Is_Success = true;
-	}
-	return Is_Success;
-}
+
 void Image_Background(fstream & file, int Width, int Height , Vector3 Origin , Vector3 Lower_Left_Corner , Vector3 Horizontal , Vector3 Vertical)
 {
 	shared_ptr<Scence>scence = std::make_shared<Scence>();
@@ -84,7 +51,7 @@ void Image_Background(fstream & file, int Width, int Height , Vector3 Origin , V
 				float v = (float(j) + random) / float(Height);
 				// Because of the origin point is (0,0,0), so Lower_Left_Corner + Horizontal *u +  Vertical * v is the direction.
 				Ray ray(Origin, Lower_Left_Corner + Horizontal * u + Vertical * v);
-				color += Make_Color(ray, scence);
+			//	color += Make_Color(ray, scence);
 
 			}
 			color /= AA_Num;
@@ -131,7 +98,7 @@ void Unit_Test_Vector()
 }
 int main()
 {
-	fstream File;
+	/*fstream File;
 	if (!Initialize_File(File, Width, Height))
 	{
 		std::cout << "file opened fail";
@@ -145,6 +112,9 @@ int main()
 	Image_Background(File, Width, Height, Camera_Position, Lower_Left_Corner, Horizontal, Vertical);
 	File.close();
 	//Unit_Test_Vector();
-	//system("pause");
+	//system("pause");*/
+	Render * render = new Render();
+	render->Initialize();
+	render->Start();
 	return 0;
 }

@@ -52,6 +52,12 @@
     <Filter Include="Source Files\Scence\Light">
       <UniqueIdentifier>{c1fd2a14-6fbf-4a7b-8f67-d2fe1ae72fdb}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Render">
+      <UniqueIdentifier>{822ebad3-cdf6-4879-a14b-b113a76ce33c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Render">
+      <UniqueIdentifier>{dae157ef-2b7b-4539-905f-c186d93f5925}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Hitable.h">
@@ -92,6 +98,9 @@
     </ClInclude>
     <ClInclude Include="Light.h">
       <Filter>Header Files\Scence\Light</Filter>
+    </ClInclude>
+    <ClInclude Include="Render.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -136,6 +145,9 @@
     </ClCompile>
     <ClCompile Include="Light.cpp">
       <Filter>Source Files\Scence\Light</Filter>
+    </ClCompile>
+    <ClCompile Include="Render.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

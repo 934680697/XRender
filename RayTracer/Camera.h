@@ -1,9 +1,9 @@
 #pragma once
 #include "Scence_Object.h"
+#include "Film.h"
 #include<memory>
 using 	std::shared_ptr;
 class Vector3;
-class Film;
 class Ray;
 class Camera : public Scence_Object
 {
@@ -12,9 +12,15 @@ public:
 
 	~Camera();
 
-	Ray Generate_Ray(int position_x , int position_y);
+	Ray Generate_Ray(float position_x , float position_y);
 
 	bool Initialize();
+
+	int   Get_Image_Height();
+
+	int   Get_Image_Width();
+
+	shared_ptr<Film>Get_Film();
 
 private:
 
@@ -22,7 +28,7 @@ private:
 
 	Vector3 vertical_vector;
 
-	Vector3 top_left_corner_position;
+	Vector3 lower_left_corner_position;
 
 	shared_ptr<Film>film;
 

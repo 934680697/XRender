@@ -124,6 +124,7 @@
     <ClInclude Include="Primitive.h" />
     <ClInclude Include="Ray.h" />
     <ClInclude Include="Rectangular.h" />
+    <ClInclude Include="Render.h" />
     <ClInclude Include="Scence.h" />
     <ClInclude Include="Scence_Object.h" />
     <ClInclude Include="Sphere.h" />
@@ -140,6 +141,7 @@
     <ClCompile Include="Primitive.cpp" />
     <ClCompile Include="Ray.cpp" />
     <ClCompile Include="Rectangular.cpp" />
+    <ClCompile Include="Render.cpp" />
     <ClCompile Include="Scence.cpp" />
     <ClCompile Include="Scence_Object.cpp" />
     <ClCompile Include="Sphere.cpp" />

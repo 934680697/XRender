@@ -21,17 +21,14 @@ Scence::~Scence()
 
 
 
-void Scence::Initialize()
+bool Scence::Initialize()
 {
-	Initialize_Camera();
 	Initialize_Lights();
 	Initialize_Objects();
+	return true;
 }
 
-void Scence::Initialize_Camera()
-{
-	Scence_Camera = make_shared<Camera>();
-}
+
 
 void Scence::Initialize_Objects()
 {
@@ -39,7 +36,7 @@ void Scence::Initialize_Objects()
 	shared_ptr<Material_Metal>Mat = make_shared<Material_Metal>(Vector3(0,0,0),Vector3(1,0.78,0.34),6);
 	shared_ptr<Primitive>First_Sphere = make_shared<Primitive>(sphere,Mat);
 
-	this->Scence_Objects.push_back(First_Sphere);
+	this->scence_objects.push_back(First_Sphere);
 	/*sphere = make_shared<Sphere>(Vector3(0, -100.5, -1), 100);
 	shared_ptr<Primitive>Second_Sphere = make_shared<Primitive>(sphere);
 	this->Scence_Objects.push_back(Second_Sphere);*/
@@ -50,33 +47,40 @@ void Scence::Initialize_Lights()
 	shared_ptr<Light>DirectionLight = make_shared<Light>();
 	DirectionLight->Set_Color(Vector3(1, 1, 1));
 	DirectionLight->Set_Position(Vector3(0, 0, 0));
-	//DirectionLight->Set_Rotation(Vector3(-1, -1, -1));
 	DirectionLight->Set_Rotation(Vector3(0, 0, -1));
-
-	this->Scence_Lights.push_back(DirectionLight);
+	this->scence_lights.push_back(DirectionLight);
 }
 
-bool Scence::Render(Ray ray, Hit_Data & hitdata)
+Vector3 Scence::Render(Ray ray)
 {
+	Vector3 color;
 	float Nearest_Hit_Distance = RAND_MAX;
 	Hit_Data Temp_hit_data;
 	bool bHit_Something = false;
-	for (auto light : Scence_Lights)
+	for (auto light : scence_lights)
 	{
-		for (auto Scence_Object : Scence_Objects)
+		for (auto object : scence_objects)
 		{
-			if (Scence_Object->Intersect_With_Ray(ray,*light, Temp_hit_data))
+			// Hit something in the scence
+			if (object->Intersect_With_Ray(ray,*light, Temp_hit_data))
 			{
 				bHit_Something = true;
 				float Current_Hit_Distance = (Temp_hit_data.Hit_Position - ray.GetOrigin()).Lengh();
 				if (Current_Hit_Distance < Nearest_Hit_Distance)
 				{
 					Nearest_Hit_Distance = Current_Hit_Distance;
-					hitdata = Temp_hit_data;
+					color = Temp_hit_data.Color;
 				}
+			}
+			else
+			{
+				ray.GetDirection().Normalize();
+				float t = 0.5f * (ray.GetDirection().Y() + 1.0f);
+				// lerp the color from white to target color based on Y position.
+				color =  Vector3(1.0, 1.0, 1.0) * (1.0 - t) + Vector3(0.5, 0.7, 1.0) * t;
 			}
 		}
 	}
-	return bHit_Something;
+	return color;
 }
 

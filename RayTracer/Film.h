@@ -3,6 +3,7 @@
 #include <string>
 using std::fstream;
 using std::string;
+class Vector3;
 class Film
 {
 public:
@@ -13,17 +14,17 @@ public:
 
 	bool Initialize(int image_height, int image_width);
 
-	void Draw_On_Film_Normalized_Color(float normalized_r_color, float normalized_g_color, float normalized_b_color);
-
-	void Draw_On_Film(float r_color, float g_color, float b_color);
-
+	void Draw_On_Film_Normalized_Color_Vector(Vector3 color);
 
 	int Get_Image_Width();
 
 	int Get_Image_Height();
 
-
 private:
+
+	void Draw_On_Film_Normalized_Color(float normalized_r_color, float normalized_g_color, float normalized_b_color);
+
+	void Draw_On_Film(float r_color, float g_color, float b_color);
 
 	int		 image_width;
 

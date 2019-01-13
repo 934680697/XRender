@@ -6,6 +6,7 @@ class Camera;
 class Ray;
 class Primitive;
 class Light;
+class Vector3;
 using std::vector;
 using std::shared_ptr;
 class Scence
@@ -15,22 +16,19 @@ public:
 
 	~Scence();
 
-	void Initialize();
+	bool Initialize();
 
-	bool Render(Ray ray, Hit_Data & hitdata);
+	Vector3 Render(Ray ray);
 
 private:
 
-	void Initialize_Camera();
 
 	void Initialize_Objects();
 
 	void Initialize_Lights();
 
-	shared_ptr<Camera>				  Scence_Camera;
+	vector<shared_ptr<Primitive>>scence_objects;
 
-	vector<shared_ptr<Primitive>>Scence_Objects;
-
-	vector<shared_ptr<Light>>      Scence_Lights;
+	vector<shared_ptr<Light>>      scence_lights;
 };
 

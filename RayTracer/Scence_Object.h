@@ -20,7 +20,7 @@ public:
 	Vector3 Get_Scale();
 
 
-private:
+protected:
 
 	Vector3 Position;
 	Vector3 Rotation;
