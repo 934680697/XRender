@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\Geometry">
+      <UniqueIdentifier>{b0397988-f0f9-49f6-9312-e374012623a0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Math">
+      <UniqueIdentifier>{9651a7c9-bd45-4050-b8f8-62294b37343f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Gemetry">
+      <UniqueIdentifier>{59fa5389-f4e7-4515-9a7e-7e1dfebe517a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Math">
+      <UniqueIdentifier>{59880503-2aac-4a74-b420-6292bcaac3f5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Scence">
+      <UniqueIdentifier>{87ccfef3-a1fe-4271-8abc-801671894742}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Scence">
+      <UniqueIdentifier>{a48685ea-754d-48b3-87c0-9c073d43d3fb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Materials">
+      <UniqueIdentifier>{4cc672a6-4e1c-4829-aff4-896f93da8e4c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Material">
+      <UniqueIdentifier>{fb2e6b10-3a95-4ef9-b98c-b9ab8e1c4432}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Debug">
+      <UniqueIdentifier>{5611db81-df6b-415d-9618-c335c7a93e89}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Scence\Camera">
+      <UniqueIdentifier>{645ca6b0-9f32-477b-8063-ecaa76237e1f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Scence\Camera">
+      <UniqueIdentifier>{45baf182-cdae-4c59-acfd-457f74c69df4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Scence\Light">
+      <UniqueIdentifier>{ce4c24c4-9501-4a22-9680-b0d259ba91c3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Scence\Light">
+      <UniqueIdentifier>{c1fd2a14-6fbf-4a7b-8f67-d2fe1ae72fdb}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Hitable.h">
+      <Filter>Header Files\Gemetry</Filter>
+    </ClInclude>
+    <ClInclude Include="Ray.h">
+      <Filter>Header Files\Gemetry</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector3.h">
+      <Filter>Header Files\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Sphere.h">
+      <Filter>Header Files\Gemetry</Filter>
+    </ClInclude>
+    <ClInclude Include="Rectangular.h">
+      <Filter>Header Files\Gemetry</Filter>
+    </ClInclude>
+    <ClInclude Include="Scence.h">
+      <Filter>Header Files\Scence</Filter>
+    </ClInclude>
+    <ClInclude Include="Scence_Object.h">
+      <Filter>Header Files\Scence</Filter>
+    </ClInclude>
+    <ClInclude Include="Material_Metal.h">
+      <Filter>Header Files\Material</Filter>
+    </ClInclude>
+    <ClInclude Include="Material.h">
+      <Filter>Header Files\Material</Filter>
+    </ClInclude>
+    <ClInclude Include="Primitive.h">
+      <Filter>Header Files\Scence</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera.h">
+      <Filter>Header Files\Scence\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="Film.h">
+      <Filter>Header Files\Scence\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="Light.h">
+      <Filter>Header Files\Scence\Light</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Vector3.cpp">
+      <Filter>Source Files\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Ray.cpp">
+      <Filter>Source Files\Geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="Hitable.cpp">
+      <Filter>Source Files\Geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="Rectangular.cpp">
+      <Filter>Source Files\Geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="Sphere.cpp">
+      <Filter>Source Files\Geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="Scence.cpp">
+      <Filter>Source Files\Scence</Filter>
+    </ClCompile>
+    <ClCompile Include="Scence_Object.cpp">
+      <Filter>Source Files\Scence</Filter>
+    </ClCompile>
+    <ClCompile Include="Material.cpp">
+      <Filter>Source Files\Materials</Filter>
+    </ClCompile>
+    <ClCompile Include="Primitive.cpp">
+      <Filter>Source Files\Scence</Filter>
+    </ClCompile>
+    <ClCompile Include="Material_Metal.cpp">
+      <Filter>Source Files\Materials</Filter>
+    </ClCompile>
+    <ClCompile Include="Camera.cpp">
+      <Filter>Source Files\Scence\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="Film.cpp">
+      <Filter>Source Files\Scence\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="Light.cpp">
+      <Filter>Source Files\Scence\Light</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
