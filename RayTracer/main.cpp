@@ -9,18 +9,7 @@ int main()
 	return 0;
 }
 
-/*Vector3 Random_in_Unit_Sphere()
-{
-	Vector3 Point;
-	do
-	{
-		float x = RAMDOM_ZERO_TO_ONE;
-		float y = RAMDOM_ZERO_TO_ONE;
-		float z = RAMDOM_ZERO_TO_ONE;
-		Point = Vector3(RAMDOM_ZERO_TO_ONE, RAMDOM_ZERO_TO_ONE, RAMDOM_ZERO_TO_ONE) * 2 - Vector3(1, 1, 1);
-	} while (Vector3::DotProduct(Point, Point) >= 1.0f);
-	return Point;
-}
+/*
 
 void Unit_Test_Vector()
 {

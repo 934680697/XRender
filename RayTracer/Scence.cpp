@@ -5,6 +5,7 @@
 #include "Sphere.h"
 #include "Light.h"
 #include "Material_Metal.h"
+#include "Material_Lambertian.h"
 
 using std::make_shared;
 using std::shared_ptr;
@@ -37,9 +38,13 @@ void Scence::Initialize_Objects()
 	shared_ptr<Material_Metal>Mat = make_shared<Material_Metal>(Vector3(0,0,0),Vector3(1,0.78,0.34),6);
 	shared_ptr<Primitive>First_Sphere = make_shared<Primitive>(sphere,Mat);
 	*/
+	shared_ptr<Sphere>bottom_sphere = make_shared<Sphere>(Vector3(0,-100.5, -1), 100);
+	shared_ptr<Material_Lambertian>bottom_material = make_shared<Material_Lambertian>(Vector3(0.8, 0.8, 0.0));
+	shared_ptr<Primitive>bottom = make_shared<Primitive>(bottom_sphere, bottom_material);
+
 
 	shared_ptr<Sphere>middle_sphere = make_shared<Sphere>(Vector3(0, 0, -1), 0.5);
-	shared_ptr<Material_Metal>middle_material = make_shared<Material_Metal>(Vector3(0.8, 0.3, 0.3), Vector3(1, 0.78, 0.34), 6);
+	shared_ptr<Material_Lambertian>middle_material = make_shared<Material_Lambertian>(Vector3(0.8, 0.3, 0.3));
 	shared_ptr<Primitive>middle = make_shared<Primitive>(middle_sphere, middle_material);
 
 	shared_ptr<Sphere>left_sphere = make_shared<Sphere>(Vector3(-1, 0, -1), 0.5);
@@ -50,6 +55,7 @@ void Scence::Initialize_Objects()
 	shared_ptr<Material_Metal>right_material = make_shared<Material_Metal>(Vector3(0.8, 0.8, 0.8), Vector3(1, 0.78, 0.34), 6);
 	shared_ptr<Primitive>right = make_shared<Primitive>(right_sphere, right_material);
 
+	this->scence_objects.push_back(bottom);
 	this->scence_objects.push_back(left);
 	this->scence_objects.push_back(right);
 	this->scence_objects.push_back(middle);
@@ -72,6 +78,7 @@ void Scence::Initialize_Lights()
 Vector3 Scence::Render(Ray ray,int reflection_depth)
 {
 	Vector3 color(0,0,0);
+	// reach the reflection depth
 	if (reflection_depth == 0)
 	{
 		return color;
@@ -108,7 +115,17 @@ Vector3 Scence::Render(Ray ray,int reflection_depth)
 		// calculating the reflection light
 		if (bHit_Something)
 		{
-			color = final_hit_data.reflectance * Render(Ray(final_hit_data.Hit_Position,final_hit_data.reflect_vector), reflection_depth - 1);
+			
+			if (final_hit_data.reflect_vector != Vector3(0, 0, 0))
+			{
+				// if we are using a reflectable shading model/
+				color = final_hit_data.reflectance * Render(Ray(final_hit_data.Hit_Position, final_hit_data.reflect_vector), reflection_depth - 1);
+			}
+			else
+			{
+				// use for non reflectable shading model.
+				color = final_hit_data.Color;
+			}
 		}
 	}
 	return color;
