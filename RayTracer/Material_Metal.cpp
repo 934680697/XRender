@@ -6,7 +6,9 @@
 #include <math.h>
 
 
-Material_Metal::Material_Metal():specular(Vector3(0,0,0)), roughness(0)
+Material_Metal::Material_Metal()
+	:specular(Vector3(0,0,0)), 
+	roughness(0)
 {
 
 }

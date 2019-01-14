@@ -16,10 +16,10 @@ if(!(OBJECT->Initialize()))\
 using std::make_shared;
 
 Render::Render()
+	:current_x_position(0),
+	current_y_position(0),
+	sample_ray_amount(100)
 {
-	current_x_position    = 0;
-	current_y_position    = 0;
-	sample_ray_amount = 100;
 }
 
 bool Render::Initialize()

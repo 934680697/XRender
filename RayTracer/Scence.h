@@ -22,6 +22,10 @@ public:
 
 private:
 
+	Scence(const Scence & scence) = delete;
+	Scence(const Scence && scence) = delete;
+	void operator=(const Scence & scence) = delete;
+	void operator=(const Scence && scence) = delete;
 
 	void Initialize_Objects();
 

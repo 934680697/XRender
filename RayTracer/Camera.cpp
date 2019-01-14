@@ -1,7 +1,13 @@
 #include "Camera.h"
 #include "Ray.h"
 
-Camera::Camera():image_width(200),image_height(100),horizon_vector(4,0,0),vertical_vector(0,2,0),film(std::make_shared<Film>()),lower_left_corner_position(-2,-1,-1)
+Camera::Camera()
+	:image_width(200),
+	image_height(100),
+	horizon_vector(4,0,0),
+	vertical_vector(0,2,0),
+	film(std::make_shared<Film>()),
+	lower_left_corner_position(-2,-1,-1)
 {
 
 

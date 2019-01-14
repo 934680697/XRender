@@ -2,7 +2,9 @@
 
 
 
-Sphere::Sphere():Origin(0,0,0),Radius(0.3)
+Sphere::Sphere()
+	:Origin(0,0,0),
+	Radius(0.3)
 {
 	
 }

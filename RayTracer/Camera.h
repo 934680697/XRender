@@ -24,6 +24,12 @@ public:
 
 private:
 
+	/* Uncopyable*/
+	Camera(const Camera & camera) = delete;
+	Camera(const Camera && camera) = delete;
+	void operator=(const Camera & camera) = delete;
+	void operator=(const Camera && camera) = delete;
+
 	Vector3 horizon_vector;
 
 	Vector3 vertical_vector;

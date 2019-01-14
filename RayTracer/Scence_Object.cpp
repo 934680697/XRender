@@ -2,7 +2,10 @@
 
 
 
-Scence_Object::Scence_Object():position(0,0,0), rotation(0,0,0), scale(1,1,1)
+Scence_Object::Scence_Object()
+	:position(0,0,0), 
+	rotation(0,0,0), 
+	scale(1,1,1)
 {
 
 }

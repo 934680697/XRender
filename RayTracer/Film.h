@@ -22,6 +22,12 @@ public:
 
 private:
 
+	/* Uncopyable*/
+	Film(const Film & film) = delete;
+	Film(const Film && film) = delete;
+	void operator=(const Film & film) = delete;
+	void operator=(const Film && film) = delete;
+
 	void Draw_On_Film_Normalized_Color(float normalized_r_color, float normalized_g_color, float normalized_b_color);
 
 	void Draw_On_Film(float r_color, float g_color, float b_color);

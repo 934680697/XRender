@@ -16,9 +16,11 @@ public:
 	~Render();
 
 private:
+	/* Uncopyable*/
 	Render(const Render & render)	   = delete;
 	Render(const Render && render)  = delete;
 	Render& operator=(const Render & render) = delete;
+	Render& operator=(const Render && render) = delete;
 
 	shared_ptr<Scence>scence;
 
