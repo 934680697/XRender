@@ -13,3 +13,14 @@ dir_to_ignore/RayTracer/x64
 *.ipch
 *.db
 .vs/RayTracer/v15/ipch/AutoPCH/29b5de1bac0ec1a0/SPHERE.ipch
+*.obj
+*.tlog
+*.log
+*.idb
+*.pdb
+*.ilk
+*.exe
+*.ipch
+*.db
+.vs/RayTracer/v15/.suo
+.vs/RayTracer/v15/.suo
