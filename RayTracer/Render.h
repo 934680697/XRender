@@ -1,6 +1,5 @@
 #pragma once
 #include <memory>
-using std::shared_ptr;
 class Scence;
 class Camera;
 class Render
@@ -22,9 +21,9 @@ private:
 	Render& operator=(const Render & render) = delete;
 	Render& operator=(const Render && render) = delete;
 
-	shared_ptr<Scence>scence;
+	std::shared_ptr<Scence>scence;
 
-	shared_ptr<Camera>camera;
+	std::shared_ptr<Camera>camera;
 
 	int sample_ray_amount;
 

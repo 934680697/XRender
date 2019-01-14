@@ -13,6 +13,7 @@ if(!(OBJECT->Initialize()))\
 	return false;\
 }\
 
+using std::shared_ptr;
 using std::make_shared;
 
 Render::Render()

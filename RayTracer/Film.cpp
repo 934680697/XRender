@@ -2,7 +2,8 @@
 #include "Vector3.h"
 #include <iostream>
 #define SPACE " "
-
+using std::fstream;
+using std::string;
 Film::Film()
 	:image_height(100),
 	image_width(200),

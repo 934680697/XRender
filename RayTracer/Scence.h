@@ -7,8 +7,6 @@ class Ray;
 class Primitive;
 class Light;
 class Vector3;
-using std::vector;
-using std::shared_ptr;
 class Scence
 {
 public:
@@ -31,8 +29,8 @@ private:
 
 	void Initialize_Lights();
 
-	vector<shared_ptr<Primitive>>scence_objects;
+	std::vector<std::shared_ptr<Primitive>>scence_objects;
 
-	vector<shared_ptr<Light>>      scence_lights;
+	std::vector<std::shared_ptr<Light>>      scence_lights;
 };
 

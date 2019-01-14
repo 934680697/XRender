@@ -1,8 +1,6 @@
 #pragma once
 #include <fstream>
 #include <string>
-using std::fstream;
-using std::string;
 class Vector3;
 class Film
 {
@@ -32,14 +30,14 @@ private:
 
 	void Draw_On_Film(float r_color, float g_color, float b_color);
 
-	int		 image_width;
+	int				 image_width;
 
-	int		 image_height;
+	int				 image_height;
 
-	fstream image_file;
+	std::fstream   image_file;
 
-	string	 image_name;
+	std::string	     image_name;
 
-	string	 image_directory;
+	std::string	     image_directory;
 };
 

@@ -1,6 +1,6 @@
 #include "Camera.h"
 #include "Ray.h"
-
+using 	std::shared_ptr;
 Camera::Camera()
 	:image_width(200),
 	image_height(100),

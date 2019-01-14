@@ -22,5 +22,7 @@ dir_to_ignore/RayTracer/x64
 *.exe
 *.ipch
 *.db
+*.vs
 .vs/RayTracer/v15/.suo
 .vs/RayTracer/v15/.suo
+.vs/RayTracer/v15/ipch/AutoPCH/fe963c8d59b306d3/RECTANGULAR.ipch

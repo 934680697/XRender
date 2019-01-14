@@ -2,7 +2,6 @@
 #include "Scence_Object.h"
 #include "Film.h"
 #include<memory>
-using 	std::shared_ptr;
 class Vector3;
 class Ray;
 class Camera : public Scence_Object
@@ -20,7 +19,7 @@ public:
 
 	int   Get_Image_Width();
 
-	shared_ptr<Film>Get_Film();
+	std::shared_ptr<Film>Get_Film();
 
 private:
 
@@ -36,7 +35,7 @@ private:
 
 	Vector3 lower_left_corner_position;
 
-	shared_ptr<Film>film;
+	std::shared_ptr<Film>film;
 
 	int image_width;
 
