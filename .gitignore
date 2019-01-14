@@ -1,0 +1,8 @@
+dir_to_ignore/Debug
+dir_to_ignore/Output
+dir_to_ignore/Release
+dir_to_ignore/x64
+dir_to_ignore/RayTracer/v15
+dir_to_ignore/RayTracer/Debug
+dir_to_ignore/RayTracer/Release
+dir_to_ignore/RayTracer/x64
