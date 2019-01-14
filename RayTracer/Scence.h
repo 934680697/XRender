@@ -16,7 +16,7 @@ public:
 
 	bool Initialize();
 
-	Vector3 Render(Ray ray);
+	Vector3 Render(Ray ray,int reflection_depth);
 
 private:
 

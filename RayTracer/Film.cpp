@@ -8,7 +8,7 @@ Film::Film()
 	:image_height(100),
 	image_width(200),
 	image_directory("G:/Project/C++/RayTracer/OutPut/"),
-	image_name("NewFramework.ppm")
+	image_name("three_sphere.ppm")
 {
 	
 }

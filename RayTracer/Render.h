@@ -25,6 +25,8 @@ private:
 
 	std::shared_ptr<Camera>camera;
 
+	int reflection_depth;
+
 	int sample_ray_amount;
 
 	int current_x_position;

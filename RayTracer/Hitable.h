@@ -7,6 +7,8 @@ struct Hit_Data
 	Vector3 Color;
 	Vector3 Hit_Position;
 	Vector3 Hit_Normal;
+	Vector3 reflectance;
+	Vector3 reflect_vector;
 };
 
 class Hitable

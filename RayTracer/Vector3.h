@@ -121,6 +121,10 @@ public:
 		Vector3 vec(this->Value[0] * Value,this->Value[1] * Value, this->Value[2] * Value);
 		return vec;
 	}
+	inline Vector3 operator*(Vector3 vec)
+	{
+		return Vector3(this->Value[0] * vec.X(), this->Value[1] * vec.Y(), this->Value[2] * vec.Z());
+	}
 	inline Vector3& operator*=(float Value)
 	{
 		this->Value[0] *= Value;
@@ -139,6 +143,10 @@ public:
 		this->Value[1] /= Value;
 		this->Value[2] /= Value;
 		return *this;
+	}
+	friend inline Vector3 operator*(float value, Vector3 vec)
+	{
+		return Vector3(vec.X() * value, vec.Y() * value, vec.Z() *value);
 	}
 	friend inline Vector3 operator-(float value, Vector3 vec)
 	{

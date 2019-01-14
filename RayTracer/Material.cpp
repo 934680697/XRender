@@ -1,5 +1,6 @@
 #include "Material.h"
 #include "Light.h"
+#include "Vector3.h"
 
 
 
@@ -8,7 +9,7 @@ Material::Material()
 
 }
 
-Material::Material(Vector3 Diffuse_Color):diffuse_Color(diffuse_Color)
+Material::Material(Vector3 diffuse_Color):diffuse_Color(diffuse_Color)
 {
 
 }
@@ -17,7 +18,11 @@ Material::~Material()
 {
 
 }
-Vector3 Material::Shading(Ray & ray, Light & light,Hit_Data & hit_data)
+void Material::Shading(Ray & ray, Light & light,Hit_Data & hit_data)
 {
-	return Vector3();
+}
+
+Vector3 Material::Cal_Reflect_Vector(Vector3 incident_light, Vector3 normal)
+{
+	return incident_light - normal * 2 * Vector3::DotProduct(incident_light, normal);
 }

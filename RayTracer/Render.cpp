@@ -19,7 +19,8 @@ using std::make_shared;
 Render::Render()
 	:current_x_position(0),
 	current_y_position(0),
-	sample_ray_amount(100)
+	sample_ray_amount(100),
+	reflection_depth(50)
 {
 }
 
@@ -46,7 +47,7 @@ void Render::Start()
 				float end_location_x = (current_x_position + RAMDOM_ZERO_TO_ONE) / camera->Get_Image_Width();
 				float end_location_y = (current_y_position + RAMDOM_ZERO_TO_ONE) / camera->Get_Image_Height();
 				Ray ray = camera->Generate_Ray(end_location_x, end_location_y);
-				pixel_color += scence->Render(ray);
+				pixel_color += scence->Render(ray, reflection_depth);
 			}
 			pixel_color /= sample_ray_amount;
 			camera->Get_Film()->Draw_On_Film_Normalized_Color_Vector(pixel_color);

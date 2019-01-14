@@ -10,8 +10,8 @@ public:
 
 	~Material_Metal();
 
-	virtual Vector3 Shading(Ray & ray, Light & light, Hit_Data & hit_data)override;
-
+	virtual void Shading(Ray & ray, Light & light, Hit_Data & hit_data)override;
+protected:
 
 private:
 
