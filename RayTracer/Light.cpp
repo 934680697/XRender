@@ -11,12 +11,12 @@ Light::~Light()
 {
 }
 
-void Light::Set_Color(Vector3 Color)
+void Light::Set_Color(Vector3 color)
 {
-	this->Color = Color;
+	this->color = color;
 }
 
 Vector3 Light::Get_Color()
 {
-	return this->Color;
+	return this->color;
 }

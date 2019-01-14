@@ -10,7 +10,7 @@ public:
 
 	Material();
 
-	Material(Vector3 Diffuse_Color);
+	Material(Vector3 diffuse_Color);
 
 
 	~Material();
@@ -19,7 +19,7 @@ public:
 
 private:
 
-	Vector3 Diffuse_Color;
+	Vector3 diffuse_Color;
 
 
 };

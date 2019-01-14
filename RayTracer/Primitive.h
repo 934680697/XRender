@@ -18,8 +18,8 @@ public:
 
 private:
 	
-	std::shared_ptr<Hitable>Shape;
-	std::shared_ptr<Material>Mat;
+	std::shared_ptr<Hitable>shape;
+	std::shared_ptr<Material>material;
 
 };
 

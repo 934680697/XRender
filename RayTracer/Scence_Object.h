@@ -7,23 +7,23 @@ public:
 
 	~Scence_Object();
 
-	void Set_Position(Vector3 Poisition);
+	void Set_Position(Vector3 poisition);
 
 	Vector3 Get_Position();
 	
-	void Set_Rotation(Vector3 Rotation);
+	void Set_Rotation(Vector3 rotation);
 
 	Vector3 Get_Rotation();
 	
-	void Set_Scale(Vector3 Scale);
+	void Set_Scale(Vector3 scale);
 
 	Vector3 Get_Scale();
 
 
 protected:
 
-	Vector3 Position;
-	Vector3 Rotation;
-	Vector3 Scale;
+	Vector3 position;
+	Vector3 rotation;
+	Vector3 scale;
 };
 

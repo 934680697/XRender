@@ -6,17 +6,17 @@ public:
 
 	Ray();
 
-	Ray(Vector3 Origin, Vector3 Direction);
+	Ray(Vector3 origin, Vector3 direction);
 
-	Vector3 GetOrigin();
+	Vector3 Get_Origin();
 
-	Vector3 GetDirection();
+	Vector3 Get_Direction();
 
 	Vector3 Point_At_Parameter(float t);
 
 private:
 
-	Vector3 Origin;
+	Vector3 origin;
 
-	Vector3 Direction;
+	Vector3 direction;
 };

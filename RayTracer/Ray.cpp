@@ -3,21 +3,19 @@ Ray::Ray()
 {
 
 }
-Ray::Ray(Vector3 Origin, Vector3 Direction)
+Ray::Ray(Vector3 origin, Vector3 direction):origin(origin), direction(direction)
 {
-	this->Origin		 = Origin;
-	this->Direction = Direction;
 }
-Vector3 Ray::GetOrigin()
+Vector3 Ray::Get_Origin()
 {
-	return this->Origin;
+	return this->origin;
 }
-Vector3 Ray::GetDirection()
+Vector3 Ray::Get_Direction()
 {
-	return this->Direction;
+	return this->direction;
 }
 
 Vector3 Ray::Point_At_Parameter(float t)
 {
-	return Origin + (Direction * t);
+	return origin + (direction * t);
 }

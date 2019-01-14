@@ -12,22 +12,20 @@ Primitive::Primitive()
 
 
 
-Primitive::Primitive(std::shared_ptr<Hitable>Shape, std::shared_ptr<Material>Mat)
+Primitive::Primitive(std::shared_ptr<Hitable>shape, std::shared_ptr<Material>material):shape(shape), material(material)
 {
-	this->Shape = Shape;
-	this->Mat = Mat;
 }
 
 Primitive::~Primitive()
 {
-	this->Shape.reset();
+	this->shape.reset();
 }
 
 bool Primitive::	Intersect_With_Ray(Ray & ray, Light & light, Hit_Data & hit_data)
 {
-	if (Shape->Hit_Test(ray, hit_data))
+	if (shape->Hit_Test(ray, hit_data))
 	{
-		this->Mat->Shading(ray, light, hit_data);
+		this->material->Shading(ray, light, hit_data);
 		return true;
 	 }
 	return false;

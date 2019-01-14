@@ -2,11 +2,9 @@
 
 
 
-Scence_Object::Scence_Object()
+Scence_Object::Scence_Object():position(0,0,0), rotation(0,0,0), scale(1,1,1)
 {
-	this->Position = Vector3(0.0, 0.0, 0.0);
-	this->Rotation = Vector3(0.0, 0.0, 0.0);
-	this->Scale = Vector3(1.0, 1.0, 1.0);
+
 }
 
 
@@ -14,35 +12,35 @@ Scence_Object::~Scence_Object()
 {
 
 }
-void Scence_Object::Set_Position(Vector3 Poisition)
+void Scence_Object::Set_Position(Vector3 position)
 {
-	this->Position = Position;
+	this->position = position;
 }
 
 Vector3 Scence_Object::Get_Position()
 {
-	return this->Position;
+	return this->position;
 }
 
-void Scence_Object::Set_Rotation(Vector3 Rotation)
+void Scence_Object::Set_Rotation(Vector3 rotation)
 {
-	this->Rotation = Rotation;
+	this->rotation = rotation;
 }
 
 Vector3 Scence_Object::Get_Rotation()
 {
-	return Rotation;
+	return rotation;
 }
 
-void Scence_Object::Set_Scale(Vector3 Scale)
+void Scence_Object::Set_Scale(Vector3 scale)
 {
-	if (Scale != Vector3(0, 0, 0))
+	if (scale != Vector3(0, 0, 0))
 	{
-		this->Scale = Scale;
+		this->scale = scale;
 	}
 }
 
 Vector3 Scence_Object::Get_Scale()
 {
-	return this->Scale;
+	return this->scale;
 }

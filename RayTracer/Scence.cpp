@@ -54,28 +54,28 @@ void Scence::Initialize_Lights()
 Vector3 Scence::Render(Ray ray)
 {
 	Vector3 color;
-	float Nearest_Hit_Distance = RAND_MAX;
-	Hit_Data Temp_hit_data;
+	float nearest_hit_distance = RAND_MAX;
+	Hit_Data temp_hit_data;
 	bool bHit_Something = false;
 	for (auto light : scence_lights)
 	{
 		for (auto object : scence_objects)
 		{
 			// Hit something in the scence
-			if (object->Intersect_With_Ray(ray,*light, Temp_hit_data))
+			if (object->Intersect_With_Ray(ray,*light, temp_hit_data))
 			{
 				bHit_Something = true;
-				float Current_Hit_Distance = (Temp_hit_data.Hit_Position - ray.GetOrigin()).Lengh();
-				if (Current_Hit_Distance < Nearest_Hit_Distance)
+				float Current_Hit_Distance = (temp_hit_data.Hit_Position - ray.Get_Origin()).Lengh();
+				if (Current_Hit_Distance < nearest_hit_distance)
 				{
-					Nearest_Hit_Distance = Current_Hit_Distance;
-					color = Temp_hit_data.Color;
+					nearest_hit_distance = Current_Hit_Distance;
+					color = temp_hit_data.Color;
 				}
 			}
 			else
 			{
-				ray.GetDirection().Normalize();
-				float t = 0.5f * (ray.GetDirection().Y() + 1.0f);
+				ray.Get_Direction().Normalize();
+				float t = 0.5f * (ray.Get_Direction().Y() + 1.0f);
 				// lerp the color from white to target color based on Y position.
 				color =  Vector3(1.0, 1.0, 1.0) * (1.0 - t) + Vector3(0.5, 0.7, 1.0) * t;
 			}

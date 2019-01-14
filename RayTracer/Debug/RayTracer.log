@@ -1,3 +1,38 @@
-﻿  Render.cpp
-g:\project\c++\raytracer\raytracer\render.cpp(50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+﻿  Scence.cpp
+g:\project\c++\raytracer\raytracer\scence.cpp(35): warning C4305: 'argument': truncation from 'double' to 'float'
+g:\project\c++\raytracer\raytracer\scence.cpp(36): warning C4305: 'argument': truncation from 'double' to 'float'
+g:\project\c++\raytracer\raytracer\scence.cpp(80): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+g:\project\c++\raytracer\raytracer\scence.cpp(80): warning C4305: 'argument': truncation from 'double' to 'float'
+g:\tools\visualstudio\build\vc\tools\msvc\14.16.27023\include\memory(1801): warning C4244: 'argument': conversion from '_Ty' to 'float', possible loss of data
+          with
+          [
+              _Ty=double
+          ]
+  g:\tools\visualstudio\build\vc\tools\msvc\14.16.27023\include\memory(1865): note: see reference to function template instantiation 'std::_Ref_count_obj<_Ty>::_Ref_count_obj<Vector3,double>(Vector3 &&,double &&)' being compiled
+          with
+          [
+              _Ty=Sphere
+          ]
+  g:\tools\visualstudio\build\vc\tools\msvc\14.16.27023\include\memory(1866): note: see reference to function template instantiation 'std::_Ref_count_obj<_Ty>::_Ref_count_obj<Vector3,double>(Vector3 &&,double &&)' being compiled
+          with
+          [
+              _Ty=Sphere
+          ]
+  g:\project\c++\raytracer\raytracer\scence.cpp(35): note: see reference to function template instantiation 'std::shared_ptr<Sphere> std::make_shared<Sphere,Vector3,double>(Vector3 &&,double &&)' being compiled
+g:\tools\visualstudio\build\vc\tools\msvc\14.16.27023\include\memory(1801): warning C4244: 'argument': conversion from '_Ty' to 'float', possible loss of data
+          with
+          [
+              _Ty=int
+          ]
+  g:\tools\visualstudio\build\vc\tools\msvc\14.16.27023\include\memory(1865): note: see reference to function template instantiation 'std::_Ref_count_obj<_Ty>::_Ref_count_obj<Vector3,Vector3,int>(Vector3 &&,Vector3 &&,int &&)' being compiled
+          with
+          [
+              _Ty=Material_Metal
+          ]
+  g:\tools\visualstudio\build\vc\tools\msvc\14.16.27023\include\memory(1866): note: see reference to function template instantiation 'std::_Ref_count_obj<_Ty>::_Ref_count_obj<Vector3,Vector3,int>(Vector3 &&,Vector3 &&,int &&)' being compiled
+          with
+          [
+              _Ty=Material_Metal
+          ]
+  g:\project\c++\raytracer\raytracer\scence.cpp(36): note: see reference to function template instantiation 'std::shared_ptr<Material_Metal> std::make_shared<Material_Metal,Vector3,Vector3,int>(Vector3 &&,Vector3 &&,int &&)' being compiled
   RayTracer.vcxproj -> G:\Project\C++\RayTracer\Debug\RayTracer.exe

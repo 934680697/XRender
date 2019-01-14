@@ -8,7 +8,7 @@ Material::Material()
 
 }
 
-Material::Material(Vector3 Diffuse_Color):Diffuse_Color(Diffuse_Color)
+Material::Material(Vector3 Diffuse_Color):diffuse_Color(diffuse_Color)
 {
 
 }

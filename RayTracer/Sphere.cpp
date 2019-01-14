@@ -37,10 +37,10 @@ float Sphere::Get_Radius()
 bool Sphere::Hit_Test(Ray & ray, Hit_Data & hit_data)
 {
 	bool bIs_Hit = false;
-	ray.GetDirection().Normalize();
-	Vector3 OC = ray.GetOrigin() - this->Origin;
-	float a = Vector3::DotProduct(ray.GetDirection(), ray.GetDirection());
-	float b = 2 * Vector3::DotProduct(ray.GetDirection(), OC);
+	ray.Get_Direction().Normalize();
+	Vector3 OC = ray.Get_Origin() - this->Origin;
+	float a = Vector3::DotProduct(ray.Get_Direction(), ray.Get_Direction());
+	float b = 2 * Vector3::DotProduct(ray.Get_Direction(), OC);
 	float c = Vector3::DotProduct(OC, OC) - this->Radius * this->Radius;
 	float discriminant = b * b - 4 * a *c;
 	if (discriminant >= 0)
