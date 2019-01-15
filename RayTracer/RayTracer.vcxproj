@@ -129,6 +129,7 @@
     <ClInclude Include="Scence.h" />
     <ClInclude Include="Scence_Object.h" />
     <ClInclude Include="Sphere.h" />
+    <ClInclude Include="Unit_Test.h" />
     <ClInclude Include="Vector3.h" />
   </ItemGroup>
   <ItemGroup>
@@ -147,6 +148,7 @@
     <ClCompile Include="Scence.cpp" />
     <ClCompile Include="Scence_Object.cpp" />
     <ClCompile Include="Sphere.cpp" />
+    <ClCompile Include="Unit_Test.cpp" />
     <ClCompile Include="Vector3.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

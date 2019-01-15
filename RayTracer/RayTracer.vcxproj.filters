@@ -105,6 +105,9 @@
     <ClInclude Include="Material_Lambertian.h">
       <Filter>Header Files\Material</Filter>
     </ClInclude>
+    <ClInclude Include="Unit_Test.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Vector3.cpp">
@@ -153,7 +156,10 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Material_Lambertian.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Materials</Filter>
+    </ClCompile>
+    <ClCompile Include="Unit_Test.cpp">
+      <Filter>Source Files\Debug</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
