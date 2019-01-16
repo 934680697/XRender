@@ -2,6 +2,7 @@
 #include<vector>
 #include<memory>
 struct Hit_Data;
+struct Render_Config;
 class Camera;
 class Ray;
 class Primitive;
@@ -14,7 +15,7 @@ public:
 
 	~Scence();
 
-	bool Initialize();
+	bool Initialize(Render_Config render_config);
 
 	Vector3 Render(Ray ray,int reflection_depth);
 

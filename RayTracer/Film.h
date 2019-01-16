@@ -1,6 +1,7 @@
 #pragma once
 #include <fstream>
 #include <string>
+struct Render_Config;
 class Vector3;
 class Film
 {
@@ -10,7 +11,7 @@ public:
 
 	~Film();
 
-	bool Initialize(int image_height, int image_width);
+	bool Initialize(Render_Config render_config);
 
 	void Draw_On_Film_Normalized_Color_Vector(Vector3 color);
 

@@ -116,6 +116,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Camera.h" />
+    <ClInclude Include="Configfile_Parser.h" />
     <ClInclude Include="Film.h" />
     <ClInclude Include="Hitable.h" />
     <ClInclude Include="Light.h" />
@@ -134,6 +135,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Camera.cpp" />
+    <ClCompile Include="Configfile_Parser.cpp" />
     <ClCompile Include="Film.cpp" />
     <ClCompile Include="Hitable.cpp" />
     <ClCompile Include="Light.cpp" />

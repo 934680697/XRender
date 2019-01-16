@@ -1,6 +1,7 @@
 #include "Film.h"
 #include "Vector3.h"
 #include <iostream>
+#include "Configfile_Parser.h"
 #define SPACE " "
 using std::fstream;
 using std::string;
@@ -8,7 +9,7 @@ Film::Film()
 	:image_height(100),
 	image_width(200),
 	image_directory("G:/Project/C++/RayTracer/OutPut/"),
-	image_name("three_sphere.ppm")
+	image_name("default.ppm")
 {
 	
 }
@@ -16,10 +17,12 @@ Film::~Film()
 {
 	image_file.close();
 }
-bool Film::Initialize(int image_height, int image_width)
+bool Film::Initialize(Render_Config render_config)
 {
-	this->image_height = image_height;
-	this->image_width  = image_width;
+	this->image_height		  = render_config.image_height;
+	this->image_width		  = render_config.image_width;
+	this->image_directory   = render_config.image_directory;
+	this->image_name		   = render_config.image_name;
 	image_file.open(image_directory + image_name);
 	if (!image_file.is_open())
 	{

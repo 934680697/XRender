@@ -2,6 +2,7 @@
 #include "Scence_Object.h"
 #include "Film.h"
 #include<memory>
+struct Render_Config;
 class Vector3;
 class Ray;
 class Camera : public Scence_Object
@@ -13,7 +14,7 @@ public:
 
 	Ray Generate_Ray(float position_x , float position_y);
 
-	bool Initialize();
+	bool Initialize(Render_Config render_config);
 
 	int   Get_Image_Height();
 

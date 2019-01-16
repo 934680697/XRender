@@ -1,0 +1,5 @@
+image_width=200
+image_height=100
+sample_amount=100
+image_directory=G:/Project/C++/RayTracer/OutPut/
+image_name=three_sphere_with_config.ppm

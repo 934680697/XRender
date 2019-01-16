@@ -2,13 +2,14 @@
 #include <memory>
 class Scence;
 class Camera;
+struct  Render_Config;
 class Render
 {
 public:
 
 	Render();
 
-	bool Initialize();
+	bool Initialize(Render_Config render_config);
 
 	void Start();
 

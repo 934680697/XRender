@@ -6,6 +6,7 @@
 #include "Light.h"
 #include "Material_Metal.h"
 #include "Material_Lambertian.h"
+#include "Configfile_Parser.h"
 
 using std::make_shared;
 using std::shared_ptr;
@@ -22,7 +23,7 @@ Scence::~Scence()
 
 
 
-bool Scence::Initialize()
+bool Scence::Initialize(Render_Config render_config)
 {
 	Initialize_Lights();
 	Initialize_Objects();

@@ -1,5 +1,6 @@
 #include "Camera.h"
 #include "Ray.h"
+#include "Configfile_Parser.h"
 using 	std::shared_ptr;
 Camera::Camera()
 	:image_width(200),
@@ -21,9 +22,9 @@ Ray Camera::Generate_Ray(float position_x, float position_y)
 	Vector3 ray_end_position = lower_left_corner_position + horizon_vector * position_x + vertical_vector * position_y;
 	return Ray(Get_Position(), ray_end_position);
 }
-bool Camera::Initialize()
+bool Camera::Initialize(Render_Config render_config)
 {
-	return film->Initialize(image_height,image_width);
+	return film->Initialize(render_config);
 }
 
 int Camera::Get_Image_Height()

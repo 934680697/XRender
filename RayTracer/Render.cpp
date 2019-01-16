@@ -5,9 +5,10 @@
 #include "Hitable.h"
 #include <random>
 #include <iostream>
+#include "Configfile_Parser.h"
 #define RAMDOM_ZERO_TO_ONE static_cast <float> (rand()) / static_cast <float> (RAND_MAX)
-#define INITIALIZE(OBJECT)\
-if(!(OBJECT->Initialize()))\
+#define INITIALIZE(OBJECT,RENDER_CONFIG)\
+if(!(OBJECT->Initialize(RENDER_CONFIG)))\
 {\
 	std::cout << "Render Initialized failed" << std::endl;\
 	return false;\
@@ -24,12 +25,13 @@ Render::Render()
 {
 }
 
-bool Render::Initialize()
+bool Render::Initialize(Render_Config render_config)
 {
 	scence  = make_shared<Scence>();
 	camera = make_shared<Camera>();
-	INITIALIZE(camera);
-	INITIALIZE(scence);
+	sample_ray_amount = render_config.sample_amount;
+	INITIALIZE(camera,render_config);
+	INITIALIZE(scence,render_config);
 	return true;
 }
 
