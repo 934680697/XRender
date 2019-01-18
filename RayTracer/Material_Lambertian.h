@@ -7,7 +7,7 @@ public:
 
 	Material_Lambertian();
 
-	Material_Lambertian(Vector3 diffuse_Color);
+	Material_Lambertian(glm::vec3 diffuse_Color);
 
 	~Material_Lambertian();
 
@@ -15,6 +15,6 @@ public:
 
 protected:
 
-	Vector3 Random_in_Unit_Sphere();
+	glm::vec3 Random_in_Unit_Sphere();
 };
 

@@ -11,12 +11,12 @@ Light::~Light()
 {
 }
 
-void Light::Set_Color(Vector3 color)
+void Light::Set_Color(glm::vec3 color)
 {
 	this->color = color;
 }
 
-Vector3 Light::Get_Color()
+glm::vec3 Light::Get_Color()
 {
 	return this->color;
 }

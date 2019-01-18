@@ -1,5 +1,5 @@
 #include "Sphere.h"
-
+#include "glm/glm.hpp"
 
 
 Sphere::Sphere()
@@ -10,7 +10,7 @@ Sphere::Sphere()
 }
 
 
-Sphere::Sphere(Vector3 Origin, float Radius):Origin(Origin),Radius(Radius)
+Sphere::Sphere(glm::vec3 Origin, float Radius):Origin(Origin),Radius(Radius)
 {
 
 }
@@ -18,7 +18,7 @@ Sphere::Sphere(Vector3 Origin, float Radius):Origin(Origin),Radius(Radius)
 Sphere::~Sphere()
 {
 }
-void Sphere::Set_Origin(Vector3 Origin)
+void Sphere::Set_Origin(glm::vec3 Origin)
 {
 	this->Origin = Origin;
 }
@@ -28,7 +28,7 @@ void Sphere::Set_Radius(float Radius)
 	this->Radius = Radius;
 }
 
-Vector3 Sphere::Get_Oringin()
+glm::vec3 Sphere::Get_Oringin()
 {
 	return this->Origin;
 }
@@ -39,11 +39,10 @@ float Sphere::Get_Radius()
 bool Sphere::Hit_Test(Ray & ray, Hit_Data & hit_data)
 {
 	bool bIs_Hit = false;
-	ray.Get_Direction().Normalize();
-	Vector3 OC = ray.Get_Origin() - this->Origin;
-	float a = Vector3::DotProduct(ray.Get_Direction(), ray.Get_Direction());
-	float b = 2 * Vector3::DotProduct(ray.Get_Direction(), OC);
-	float c = Vector3::DotProduct(OC, OC) - this->Radius * this->Radius;
+	glm::vec3 OC = ray.Get_Origin() - this->Origin;
+	float a = glm::dot(ray.Get_Direction(), ray.Get_Direction());
+	float b = 2 * glm::dot(ray.Get_Direction(), OC);
+	float c = glm::dot(OC, OC) - this->Radius * this->Radius;
 	float discriminant = b * b - 4 * a *c;
 	if (discriminant >= 0)
 	{
@@ -52,7 +51,7 @@ bool Sphere::Hit_Test(Ray & ray, Hit_Data & hit_data)
 		{
 			bIs_Hit = true;
 			hit_data.Hit_Position = ray.Point_At_Parameter(Hit_t);
-			hit_data.Hit_Normal = (hit_data.Hit_Position - Origin).Normalize();
+			hit_data.Hit_Normal = glm::normalize(hit_data.Hit_Position - Origin);
 		}
 	}
 	return bIs_Hit;

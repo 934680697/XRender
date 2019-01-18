@@ -1,22 +1,22 @@
 #pragma once
-#include "Vector3.h"
+#include "glm/vec3.hpp"
 class Ray
 {
 public:
 
 	Ray();
 
-	Ray(Vector3 origin, Vector3 direction);
+	Ray(glm::vec3 origin, glm::vec3 direction);
 
-	Vector3 Get_Origin();
+	glm::vec3 Get_Origin();
 
-	Vector3 Get_Direction();
+	glm::vec3 Get_Direction();
 
-	Vector3 Point_At_Parameter(float t);
+	glm::vec3 Point_At_Parameter(float t);
 
 private:
 
-	Vector3 origin;
+	glm::vec3 origin;
 
-	Vector3 direction;
+	glm::vec3 direction;
 };

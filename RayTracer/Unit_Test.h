@@ -10,9 +10,11 @@ public:
 
 	~Unit_Test();
 
-	static void Test_Vector();
+	//static void Test_Vector();
 
 	 static void Test_Configfile_Parser(std::string dreactory);
+
+	 static void Test_glmvector();
 
 };
 

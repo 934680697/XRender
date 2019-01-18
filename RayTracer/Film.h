@@ -1,8 +1,8 @@
 #pragma once
 #include <fstream>
 #include <string>
+#include "glm/vec3.hpp"
 struct Render_Config;
-class Vector3;
 class Film
 {
 public:
@@ -13,7 +13,7 @@ public:
 
 	bool Initialize(Render_Config render_config);
 
-	void Draw_On_Film_Normalized_Color_Vector(Vector3 color);
+	void Draw_On_Film_Normalized_Color_Vector(glm::vec3 color);
 
 	int Get_Image_Width();
 

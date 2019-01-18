@@ -42,6 +42,10 @@ bool Configfile_Parser::Read_Config_File(std::string directory, Render_Config & 
 			{
 				render_config.sample_amount = strtof(value.c_str(), 0);
 			}
+			else if (key == "render_depth")
+			{
+				render_config.render_depth = strtof(value.c_str(), 0);
+			}
 			else if (key == "image_directory")
 			{
 				render_config.image_directory = value;

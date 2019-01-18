@@ -3,7 +3,6 @@
 #include "Film.h"
 #include<memory>
 struct Render_Config;
-class Vector3;
 class Ray;
 class Camera : public Scence_Object
 {
@@ -30,11 +29,11 @@ private:
 	void operator=(const Camera & camera) = delete;
 	void operator=(const Camera && camera) = delete;
 
-	Vector3 horizon_vector;
+	glm::vec3 horizon_vector;
 
-	Vector3 vertical_vector;
+	glm::vec3 vertical_vector;
 
-	Vector3 lower_left_corner_position;
+	glm::vec3 lower_left_corner_position;
 
 	std::shared_ptr<Film>film;
 

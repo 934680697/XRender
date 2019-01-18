@@ -1,5 +1,5 @@
 #pragma once
-#include "Vector3.h"
+#include "glm/vec3.hpp"
 struct  Hit_Data;
 class Ray;
 class Light;
@@ -10,7 +10,7 @@ public:
 
 	Material();
 
-	Material(Vector3 diffuse_Color);
+	Material(glm::vec3 diffuse_Color);
 
 	~Material();
 
@@ -18,9 +18,9 @@ public:
 
 protected:
 
-	Vector3 Cal_Reflect_Vector(Vector3 incident_light, Vector3 normal);
+	glm::vec3 Cal_Reflect_Vector(glm::vec3 incident_light, glm::vec3 normal);
 
-	Vector3 diffuse_Color;
+	glm::vec3 diffuse_Color;
 
 	
 

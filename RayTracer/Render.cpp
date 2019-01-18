@@ -30,6 +30,7 @@ bool Render::Initialize(Render_Config render_config)
 	scence  = make_shared<Scence>();
 	camera = make_shared<Camera>();
 	sample_ray_amount = render_config.sample_amount;
+	reflection_depth		 = render_config.render_depth;
 	INITIALIZE(camera,render_config);
 	INITIALIZE(scence,render_config);
 	return true;
@@ -37,13 +38,12 @@ bool Render::Initialize(Render_Config render_config)
 
 void Render::Start()
 {
-	int i = 0;
 	for (current_y_position = camera->Get_Image_Height(); current_y_position != 0; current_y_position--)
 	{
 		current_x_position = 0;
 		for (current_x_position; current_x_position != camera->Get_Image_Width(); current_x_position++)
 		{
-			Vector3 pixel_color = Vector3(0, 0, 0);
+			glm::vec3 pixel_color = glm::vec3(0, 0, 0);
 			for (int current_sample_ray = 0; current_sample_ray != sample_ray_amount; current_sample_ray++)
 			{
 				float end_location_x = (current_x_position + RAMDOM_ZERO_TO_ONE) / camera->Get_Image_Width();

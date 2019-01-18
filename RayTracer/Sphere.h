@@ -6,15 +6,15 @@ public:
 
 	Sphere();
 
-	Sphere(Vector3 Origin,float Radius);
+	Sphere(glm::vec3 Origin,float Radius);
 
 	~Sphere();
 
-	void Set_Origin(Vector3 Origin);
+	void Set_Origin(glm::vec3 Origin);
 
 	void Set_Radius(float Radius);
 
-	Vector3 Get_Oringin();
+	glm::vec3 Get_Oringin();
 
 	float Get_Radius();
 
@@ -23,7 +23,7 @@ public:
 
 private:
 
-	Vector3 Origin;
+	glm::vec3 Origin;
 
 	float Radius;
 };

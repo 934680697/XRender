@@ -1,6 +1,8 @@
 #include "Camera.h"
 #include "Ray.h"
 #include "Configfile_Parser.h"
+#include "glm/glm.hpp"
+#include "glm/vec3.hpp"
 using 	std::shared_ptr;
 Camera::Camera()
 	:image_width(200),
@@ -19,7 +21,7 @@ Camera::~Camera()
 }
 Ray Camera::Generate_Ray(float position_x, float position_y)
 {
-	Vector3 ray_end_position = lower_left_corner_position + horizon_vector * position_x + vertical_vector * position_y;
+	glm::vec3 ray_end_position = lower_left_corner_position + horizon_vector * position_x + vertical_vector * position_y;
 	return Ray(Get_Position(), ray_end_position);
 }
 bool Camera::Initialize(Render_Config render_config)

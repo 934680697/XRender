@@ -36,9 +36,9 @@ bool Film::Initialize(Render_Config render_config)
 	}
 }
 
-void Film::Draw_On_Film_Normalized_Color_Vector(Vector3 color)
+void Film::Draw_On_Film_Normalized_Color_Vector(glm::vec3 color)
 {
-	Draw_On_Film_Normalized_Color(color.R(), color.G(), color.B());
+	Draw_On_Film_Normalized_Color(color.r, color.g, color.b);
 }
 
 void Film::Draw_On_Film_Normalized_Color(float normalized_r_color, float normalized_g_color, float normalized_b_color)

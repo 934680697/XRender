@@ -6,7 +6,7 @@ class Material_Metal : public Material
 public:
 	Material_Metal();
 
-	Material_Metal(Vector3 diffuse_Color,Vector3 specular,float roughness);
+	Material_Metal(glm::vec3 diffuse_Color,glm::vec3 specular,float roughness);
 
 	~Material_Metal();
 
@@ -15,7 +15,7 @@ protected:
 
 private:
 
-	Vector3 specular;
+	glm::vec3 specular;
 
 	float	     roughness;
 };

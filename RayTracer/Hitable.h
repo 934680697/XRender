@@ -1,14 +1,14 @@
 #pragma once
-#include "Vector3.h"
 #include "Ray.h"
+#include "glm/vec3.hpp"
 
 struct Hit_Data
 {
-	Vector3 Color;
-	Vector3 Hit_Position;
-	Vector3 Hit_Normal;
-	Vector3 reflectance;
-	Vector3 reflect_vector;
+	glm::vec3 Color;
+	glm::vec3 Hit_Position;
+	glm::vec3 Hit_Normal;
+	glm::vec3 reflectance;
+	glm::vec3 reflect_vector;
 };
 
 class Hitable

@@ -5,6 +5,7 @@ struct Render_Config
 	int			 image_width		= 200;
 	int			 image_height		= 100;
 	int			 sample_amount	= 100;
+	int			 render_depth		= 100;
 	std::string  image_directory = " ";
 	std::string  image_name	    = "";
 };

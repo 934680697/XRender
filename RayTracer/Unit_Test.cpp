@@ -1,4 +1,6 @@
 #include "Unit_Test.h"
+#include "glm/glm.hpp"
+#include "glm/vec3.hpp"
 #include <iostream>
 
 using std::cout;
@@ -13,7 +15,7 @@ Unit_Test::~Unit_Test()
 
 }
 
-void Unit_Test::Test_Vector()
+/*void Unit_Test::Test_Vector()
 {
 	std::string Value = "Value";
 	std::string Normalize = "Normalize";
@@ -33,7 +35,7 @@ void Unit_Test::Test_Vector()
 	Display_Vector_Length(Vec1);
 	Display_Vector_Dot(Vec1, Vec2);
 	Display_Vector(Vec1.Normalize(), Normalize);
-}
+}*/
 
 void Unit_Test::Test_Configfile_Parser(std::string dreactory)
 {
@@ -51,4 +53,12 @@ void Unit_Test::Test_Configfile_Parser(std::string dreactory)
 		cout << "The image_directory is" << render_config.image_directory << endl;
 		cout << "The image_name is" << render_config.image_name << endl;
 	}
+}
+
+void Unit_Test::Test_glmvector()
+{
+	glm::vec3 tester = glm::vec3(10, 10, 10);
+	cout << glm::length(tester) << endl;
+	cout << tester.length() << endl;
+
 }

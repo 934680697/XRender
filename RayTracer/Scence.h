@@ -1,13 +1,13 @@
 #pragma once
 #include<vector>
 #include<memory>
+#include "glm/vec3.hpp"
 struct Hit_Data;
 struct Render_Config;
 class Camera;
 class Ray;
 class Primitive;
 class Light;
-class Vector3;
 class Scence
 {
 public:
@@ -17,7 +17,7 @@ public:
 
 	bool Initialize(Render_Config render_config);
 
-	Vector3 Render(Ray ray,int reflection_depth);
+	glm::vec3 Render(Ray ray,int reflection_depth);
 
 private:
 

@@ -7,13 +7,13 @@ public:
 
 	~Light();
 
-	void Set_Color(Vector3 color);
+	void Set_Color(glm::vec3 color);
 
-	Vector3 Get_Color();
+	glm::vec3 Get_Color();
 
 private:
 
-	Vector3 color;
+	glm::vec3 color;
 
 };
 
